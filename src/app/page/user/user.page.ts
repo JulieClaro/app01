@@ -34,6 +34,7 @@ export class UserPage implements OnInit {
     onSnapshot(query(
       collection(this.db, 'manual'), // Conecta-se à coleção 'manual'
       where('section', '==', 'users'), // Obtem somente os documentos que atendem a este requisito
+      where('status', '==', 'on'), // Somente se o 'status' for 'on'
       orderBy('date', 'desc') // Obtém os documentos ordenados pela data, da mais nova para a mais antiga
     ), (myManual) => {
 
@@ -53,8 +54,6 @@ export class UserPage implements OnInit {
         this.manuals.push(this.manual);
 
       });
-
-      console.log(this.manuals);
 
     });
 

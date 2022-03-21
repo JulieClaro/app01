@@ -16,7 +16,7 @@
     <ion-img src="assets/users01.png"></ion-img>
   </div>
   <h3>Nesta seção você encontra diversos artigos de ajuda sobre as funcionalidades de gestão de usuários da plataforma.</h3>
-
+  &nbsp;
   <!-- Exibe esta div somente se existem documentos a serem exibidos -->
   <div *ngIf="manuals">
 
@@ -27,7 +27,7 @@
      -->
     <div *ngFor="let manual of manuals">
 
-      <ion-card class="ion-text-center ion-no-margin ion-margin-bottom" routerLink="/page/view/{{ manual.id }}">
+      <ion-card class="ion-text-center ion-no-margin ion-margin-bottom" routerLink="/view/{{ manual.id }}">
         <ion-img src="{{ manual.image}}"></ion-img>
         <ion-card-header>
           <ion-card-title>{{ manual.title }}</ion-card-title>
