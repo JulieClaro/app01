@@ -84,6 +84,11 @@ const routes: Routes = [
 
     // Somente se estiver logado.
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }
+  }
+  ,
+  {
+    path: 'privacidade',
+    loadChildren: () => import('./page/policies/policies.module').then( m => m.PoliciesPageModule)
   },
 
   /**
