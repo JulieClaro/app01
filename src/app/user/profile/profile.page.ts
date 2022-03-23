@@ -4,30 +4,27 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
 })
-export class AppComponent implements OnInit {
+export class ProfilePage implements OnInit {
 
   // Variável que armazena dados do usuário logado
-  user: any;
+  public userData: any;
 
   constructor(
 
     // Injeta dependências
-    public auth: AngularFireAuth,
+    public auth: AngularFireAuth
   ) { }
 
-  // executada sempre que esta página é 'aberta'
   ngOnInit() {
 
-    // Verifica se tem usuario logado
+    // Verifica se esta logado
     this.auth.authState.subscribe(user => {
       if (user) {
-
-        // Armazena os dados do usuário em 'this.user'
-        this.user = user;
+        this.userData = user;
       }
     });
 
