@@ -3,8 +3,8 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>My Profile</ion-list-header>
-          <ion-note>Em que posso te ajudar?</ion-note>
+          <ion-list-header>DocCrow</ion-list-header>
+          <ion-note>Um corvo para organizar seus documentos.</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
